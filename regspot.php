@@ -9,7 +9,7 @@
     if (isset($_POST['submit'])) { // to run on submit
 
         $image = $_POST['image'];
-        $spot_features = $_POST['features'];
+        $spot_features = (empty($_POST['features'])) ? NULL : $_POST['features'];
         $country = $_POST['country'];
         $state = $_POST['state'];
         $city = $_POST['city'];
@@ -19,6 +19,8 @@
 
         if ($image == '') {
             $msg = "Fill the image field.";
+        } else if ($spot_features == NULL) {
+            $msg = "Select atleast one spot feature.";
         } else if ($country == '') {
             $msg = "Fill the country field.";
         } else if ($state == '') {
