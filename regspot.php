@@ -1,8 +1,15 @@
 <?php
+    include "connection.php";
+
+    $sql = "SELECT id, name FROM features";
+    $stm_sql = $db_connection -> prepare($sql);
+    $stm_sql -> execute();
+    $features = $stm_sql -> fetchAll(PDO::FETCH_ASSOC);
+
     if (isset($_POST['submit'])) { // to run on submit
-        include "connection.php";
 
         $image = $_POST['image'];
+        $spot_features = $_POST['features'];
         $country = $_POST['country'];
         $state = $_POST['state'];
         $city = $_POST['city'];
@@ -42,6 +49,18 @@
             
             $result = $stm_sql -> execute();
 
+            $spot_code = $db_connection -> lastInsertId();
+
+            foreach ($spot_features as $feature_id) {
+                $sql = "INSERT INTO spots_has_features VALUES (:spot_code, :feature_id)";
+
+                $stm_sql = $db_connection -> prepare($sql);
+                $stm_sql -> bindParam(':spot_code', $spot_code);
+                $stm_sql -> bindParam(':feature_id', $feature_id);
+
+                $result = $stm_sql -> execute();
+            }
+
             if ($result) {
                 $msg = "Spot successfully registered.";
                 header("Location: findspots.php");
@@ -71,6 +90,19 @@
                     </legend>
                     <label for="idimage">Image (URL)</label>
                     <input type="text" name="image" id="idimage">
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        <h2>Spot features</h2>
+                    </legend>
+                    <?php
+                        foreach ($features as $feature) {
+                    ?>
+                            <input type="checkbox" name="features[]" id="id<?php echo $feature['name']; ?>" value="<?php echo $feature['id']; ?>">
+                            <label for="id<?php echo $feature['name']; ?>"><?php echo $feature['name']; ?></label>
+                    <?php
+                        }
+                    ?>
                 </fieldset>
                 <fieldset>
                     <legend>
