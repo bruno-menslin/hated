@@ -34,14 +34,14 @@
                     }
                 }
         ?>
-                <div class="spot-item" style="background:#2E323C; width: 400px; display: inline-block; color:#fff;">
-                    <img src="<?php echo $spot['image']; ?>" alt="spot image" width="380px" height="300px">
-
-                    <h2 style="color:#ff0000"><?php echo $features; ?></h2>
-
-                    <h3><?php echo $spot['country'] . ", " . $spot['state']; ?></h3>
-                    <h3><?php echo $spot['city'] . ", " . $spot['neighborhood']; ?></h3>
-                    <h3><?php echo $spot['street'] . ", " . $spot['number']; ?></h3>
+                <div class="card">
+                    <img src="<?php echo $spot['image']; ?>" alt="spot image" width="300px" height="300px">
+                    <h3><?php echo $features; ?></h3>
+                    <p>
+                        <?php echo $spot['country'] . ", " . $spot['state']; ?> <br>
+                        <?php echo $spot['city'] . ", " . $spot['neighborhood']; ?> <br>
+                        <?php echo $spot['street'] . ", " . $spot['number']; ?>
+                    </p>
                 </div>
         <?php
             }
