@@ -32,12 +32,13 @@
         } else if ($street == '') {
             $msg = "Fill the street field.";
         } else {
-            $sql = "INSERT INTO spots VALUES (:code, :image, :country, :state, :city, :neighborhood, :street, :number, :users_id)";
+            $sql = "INSERT INTO spots VALUES (:code, :image, :country, :state, :city, :neighborhood, :street, :number, :user_id)";
 
             $stm_sql = $db_connection -> prepare($sql);
 
+            session_start();
             $code = NULL;
-            $users_id = 1;
+            $user_id = $_SESSION['userid'];
 
             $stm_sql -> bindParam(':code', $code);
             $stm_sql -> bindParam(':image', $image);
@@ -47,7 +48,7 @@
             $stm_sql -> bindParam(':neighborhood', $neighborhood);
             $stm_sql -> bindParam(':street', $street);
             $stm_sql -> bindParam(':number', $number);
-            $stm_sql -> bindParam(':users_id', $users_id);
+            $stm_sql -> bindParam(':user_id', $user_id);
             
             $result = $stm_sql -> execute();
 
