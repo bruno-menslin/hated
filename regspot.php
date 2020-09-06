@@ -52,16 +52,18 @@
             
             $result = $stm_sql -> execute();
 
-            $spot_code = $db_connection -> lastInsertId();
+            if ($result) {
+                $spot_code = $db_connection -> lastInsertId();
 
-            foreach ($spot_features as $feature_id) {
-                $sql = "INSERT INTO spots_has_features VALUES (:spot_code, :feature_id)";
+                foreach ($spot_features as $feature_id) {
+                    $sql = "INSERT INTO spots_has_features VALUES (:spot_code, :feature_id)";
 
-                $stm_sql = $db_connection -> prepare($sql);
-                $stm_sql -> bindParam(':spot_code', $spot_code);
-                $stm_sql -> bindParam(':feature_id', $feature_id);
+                    $stm_sql = $db_connection -> prepare($sql);
+                    $stm_sql -> bindParam(':spot_code', $spot_code);
+                    $stm_sql -> bindParam(':feature_id', $feature_id);
 
-                $result = $stm_sql -> execute();
+                    $result = $stm_sql -> execute();
+                }
             }
 
             if ($result) {
