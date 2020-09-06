@@ -8,6 +8,7 @@
     <body>
         <?php include "header.php"; ?>
         <div class="container">
+            <a href="managespots.php">Manage your spots</a>
             <a href="upduser.php">Update user registration</a>
             <a href="logout.php">Logout</a>
         </div>
