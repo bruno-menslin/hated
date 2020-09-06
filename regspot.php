@@ -1,7 +1,7 @@
 <?php
     include "connection.php";
 
-    $sql = "SELECT id, name FROM features";
+    $sql = "SELECT * FROM features";
     $stm_sql = $db_connection -> prepare($sql);
     $stm_sql -> execute();
     $features = $stm_sql -> fetchAll(PDO::FETCH_ASSOC);
