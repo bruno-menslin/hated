@@ -30,10 +30,10 @@
     }    
 ?>
 
-<div class="page-find-spots">
+<div id="page-find-spots">
     <form action="#" method="POST">
         <select name="column" id="idcolumn">
-            <option value=""></option>
+            <option value="">Type</option>
             <option value="country">Country</option>
             <option value="state">State</option>
             <option value="city">City</option>
@@ -41,40 +41,47 @@
             <option value="street">Street</option>
         </select>
         <input type="text" name="search" placeholder="Search">
-        <button type="submit" name="submit">Search</button>
+        <button type="submit" name="submit">
+            <img src="../assets/images/search.svg" alt="Search">
+        </button>
     </form>
-    <?php
-        if (!empty($spots)) {
-            foreach ($spots as $spot) {  
-                $features = ""; 
+    <div class="spots">
+        <?php
+            if (!empty($spots)) {
+                foreach ($spots as $spot) {  
+                    $features = ""; 
 
-                $sql = "SELECT features.name FROM spots_has_features INNER JOIN features ON spots_has_features.features_id = features.id WHERE spots_code = :spot_code";
-                $stm_sql = $db_connection -> prepare($sql);
-                $stm_sql -> bindParam(':spot_code', $spot['code']);
-                $stm_sql -> execute();
-                $spot_features = $stm_sql -> fetchAll(PDO::FETCH_ASSOC);
+                    $sql = "SELECT features.name FROM spots_has_features INNER JOIN features ON spots_has_features.features_id = features.id WHERE spots_code = :spot_code";
+                    $stm_sql = $db_connection -> prepare($sql);
+                    $stm_sql -> bindParam(':spot_code', $spot['code']);
+                    $stm_sql -> execute();
+                    $spot_features = $stm_sql -> fetchAll(PDO::FETCH_ASSOC);
 
-                foreach ($spot_features as $spot_feature) {
-                    if ($features != '') {
-                        $features = $features . ", " . $spot_feature['name'];
-                    } else {
-                        $features = $spot_feature['name'];
+                    foreach ($spot_features as $spot_feature) {
+                        if ($features != '') {
+                            $features = $features . ", " . $spot_feature['name'];
+                        } else {
+                            $features = $spot_feature['name'];
+                        }
                     }
+        ?>
+                    <div class="spot">
+                        <img src="<?php echo $spot['image']; ?>" alt="spot image" width="300px" height="300px">
+                        <h3><?php echo $features; ?></h3>
+                        <p>
+                            <?php echo $spot['country'] . ", " . $spot['state']; ?> <br>
+                            <?php echo $spot['city'] . ", " . $spot['neighborhood']; ?> <br>
+                            <?php echo $spot['street'] . ", " . $spot['number']; ?>
+                        </p>
+                    </div>
+        <?php
                 }
-    ?>
-                <div class="card">
-                    <img src="<?php echo $spot['image']; ?>" alt="spot image" width="300px" height="300px">
-                    <h3><?php echo $features; ?></h3>
-                    <p>
-                        <?php echo $spot['country'] . ", " . $spot['state']; ?> <br>
-                        <?php echo $spot['city'] . ", " . $spot['neighborhood']; ?> <br>
-                        <?php echo $spot['street'] . ", " . $spot['number']; ?>
-                    </p>
-                </div>
-    <?php
+            } else {
+                echo "<h2>No spots found.</h2>";
             }
-        } else {
-            echo "No spots found.";
-        }
-    ?>
+        ?>
+    </div>
+    <footer>
+        <p>&copy; All rights reserved</p>
+    </footer>
 </div>

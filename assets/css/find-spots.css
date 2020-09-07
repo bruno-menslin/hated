@@ -1,0 +1,79 @@
+/*
+Date: 07/09/2020
+Desc: Find spots style file
+Author: Bruno Menslin
+*/
+
+#page-find-spots {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#page-find-spots form {
+    margin-bottom: 40px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+#page-find-spots form select,
+#page-find-spots form input,
+#page-find-spots form button {
+    border: none;
+    background: #000;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    height: 35px;
+}
+
+#page-find-spots form select {
+    border-radius: 6px 0 0 6px;
+    text-align: center;
+}
+
+#page-find-spots form button {
+    border-radius: 0 6px 6px 0;
+}
+
+#page-find-spots form img {
+    margin-top: 3px;
+    width: 20px;
+    height: 20px;
+}
+
+#page-find-spots .spots {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+}
+
+#page-find-spots .spots h2 {
+    text-align: center;
+    font-weight: lighter;
+}
+
+#page-find-spots .spot {
+    border-radius: 8px;
+}
+
+#page-find-spots .spot img {
+    width: 100%;
+    height: 231px;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+}
+
+#page-find-spots .spot h3 {
+    margin: 10px 0 20px 10px;
+    font-size: 20px;
+    line-height: 34px;
+    font-family: Roboto, sans-serif;
+}
+
+#page-find-spots .spot p {
+    font-size: 16px;
+    line-height: 26px;
+    margin: 0 0 50px 10px;
+}

@@ -7,6 +7,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>HATED</title>
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="../assets/css/find-spots.css">
     </head>
     <body>
         <div class="content">
@@ -17,11 +19,9 @@
                 </div>
             </header>
             <main>
-                <div class="container">
-                    <?php
-                        include $_GET['page'];
-                    ?>
-                </div>
+                <?php
+                    include $_GET['page'];
+                ?>
             </main>
         </div>
     </body>
