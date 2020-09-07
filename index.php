@@ -15,7 +15,7 @@
             </header>
             <main>
                 <div class="container">
-                    <img src="assets/images/brooklyn_banks" alt="spot-image" height="800px">
+                    <img src="assets/images/home-background" alt="spot-image" height="800px">
                     <div>
                         <a href="app/main.php?page=spots/findspots.php">Find spots</a>
                         <a href="app/main.php?page=spots/regspot.php">Register spot</a>
