@@ -57,7 +57,7 @@
 ?>
 
 <div class="page-register-user">
-    <form action="#" name="reguser" method="POST">
+    <form action="#" name="register-user" method="POST">
         <h1>User registration</h1>
         <label for="idusername">Username</label>
         <input type="text" name="username" id="idusername">

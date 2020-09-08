@@ -97,7 +97,7 @@
 ?>
 
 <div class="page-update-spot">
-    <form action="#" name="regspot" method="POST">
+    <form action="#" name="update-spot" method="POST">
         <h1>Update spot</h1>
         <fieldset>
             <legend>

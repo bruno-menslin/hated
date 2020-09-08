@@ -77,8 +77,8 @@
     }
 ?>
 
-<div class="page-register-spot">
-    <form action="#" name="regspot" method="POST">
+<div id="page-register-spot">
+    <form action="#" name="register-spot" method="POST">
         <h1>Register spot</h1>
         <fieldset>
             <legend>

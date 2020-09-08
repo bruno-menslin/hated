@@ -31,7 +31,7 @@
 ?>
 
 <div id="page-find-spots">
-    <form action="#" method="POST">
+    <form action="#" name="search-spot" method="POST">
         <select name="column" id="idcolumn">
             <option value="">Type</option>
             <option value="country">Country</option>

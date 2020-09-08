@@ -65,7 +65,7 @@
 ?>
 
 <div class="page-update-user">
-    <form action="#" name="reguser" method="POST">
+    <form action="#" name="update-user" method="POST">
         <h1>Update registration</h1>
         <label for="idusername">Username</label>
         <input type="text" name="username" id="idusername" value="<?php echo $user['username']; ?>">
