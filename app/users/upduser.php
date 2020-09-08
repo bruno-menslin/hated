@@ -64,15 +64,25 @@
     }
 ?>
 
-<div class="page-update-user">
+<div id="page-update-user" class="page">
     <form action="#" name="update-user" method="POST">
         <h1>Update registration</h1>
-        <label for="idusername">Username</label>
-        <input type="text" name="username" id="idusername" value="<?php echo $user['username']; ?>">
-        <label for="idemail">E-mail</label>
-        <input type="email" name="email" id="idemail" value="<?php echo $user['email']; ?>">
-        <label for="idpassword">Password</label>
-        <input type="password" name="password" id="idpassword">
-        <button type="submit" name="submit">Update</button>
+        <fieldset>
+            <div class="field">
+                <label for="idusername">Username</label>
+                <input type="text" name="username" id="idusername" value="<?php echo $user['username']; ?>">
+            </div>
+            <div class="field">
+                <label for="idemail">E-mail</label>
+                <input type="email" name="email" id="idemail" value="<?php echo $user['email']; ?>">
+            </div>
+            <div class="field">
+                <label for="idpassword">Password</label>
+                <input type="password" name="password" id="idpassword">
+            </div>
+        </fieldset>
+        <div class="form-buttons">
+            <button type="submit" name="submit">Update</button>
+        </div>        
     </form>
 </div>
