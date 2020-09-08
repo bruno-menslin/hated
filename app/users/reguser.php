@@ -56,15 +56,28 @@
     }
 ?>
 
-<div class="page-register-user">
+<div id="page-register-user" class="page">
     <form action="#" name="register-user" method="POST">
         <h1>User registration</h1>
-        <label for="idusername">Username</label>
-        <input type="text" name="username" id="idusername">
-        <label for="idemail">E-mail</label>
-        <input type="email" name="email" id="idemail">
-        <label for="idpassword">Password</label>
-        <input type="password" name="password" id="idpassword">
-        <button type="submit" name="submit">Register</button>
+        <fieldset>
+            <div class="field">
+                <label for="idusername">Username</label>
+                <input type="text" name="username" id="idusername">
+            </div>
+            <div class="field">
+                <label for="idemail">E-mail</label>
+                <input type="email" name="email" id="idemail">
+            </div>
+            <div class="field">
+                <label for="idpassword">Password</label>
+                <input type="password" name="password" id="idpassword">
+            </div>
+        </fieldset>        
+        <div class="form-buttons">
+            <button type="submit" name="submit">Register</button>
+        </div>
     </form>
+    <footer>
+        <p>&copy; All rights reserved</p>
+    </footer>
 </div>
