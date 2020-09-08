@@ -42,6 +42,7 @@
         </select>
         <input type="text" name="search" placeholder="Search">
         <button type="submit" name="submit">
+            <span>Search</span>
             <img src="../assets/images/search.svg" alt="Search">
         </button>
     </form>

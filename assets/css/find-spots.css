@@ -18,29 +18,67 @@ Author: Bruno Menslin
 }
 
 #page-find-spots form select,
-#page-find-spots form input,
-#page-find-spots form button {
-    border: none;
-    background: #000;
+#page-find-spots form input {
+    font-size: 20px;
     text-align: center;
-    color: #fff;
-    font-size: 25px;
-    height: 35px;
+
+    background: rgba(255, 255, 255, 0.09);
+    border: none;
+
+    padding: 16px 24px;
+    outline: none;
+    transition: background-color 400ms;
 }
 
 #page-find-spots form select {
     border-radius: 6px 0 0 6px;
-    text-align: center;
+    padding-left: 20px;
+}
+
+#page-find-spots form select option {
+    background: #1f1f1f;
+}
+
+#page-find-spots form select:hover,
+#page-find-spots form input:hover {
+    background: rgba(255, 255, 255, 0.123);
+}
+
+#page-find-spots form input:focus {
+    background: rgba(255, 255, 255, 0.09);
 }
 
 #page-find-spots form button {
+    text-align: end;
     border-radius: 0 6px 6px 0;
+    background: rgba(255, 255, 255, 0.09);
+    transition: background-color 400ms;
+    border: none;
 }
 
-#page-find-spots form img {
+#page-find-spots form button span {
+    display: none;
+    font-size: 20px;
+}
+
+#page-find-spots form button img {
     margin-top: 3px;
+    margin-right: 20px;
     width: 20px;
     height: 20px;
+}
+
+#page-find-spots form button:hover {
+    background: #726094;
+    text-align: center;
+}
+
+#page-find-spots form button:hover img {
+    display: none;
+}
+
+#page-find-spots form button:hover span {
+    display: block;
 }
 
 #page-find-spots .spots {
@@ -51,7 +89,6 @@ Author: Bruno Menslin
 
 #page-find-spots .spots h2 {
     text-align: center;
-    font-weight: lighter;
 }
 
 #page-find-spots .spot {
@@ -66,14 +103,14 @@ Author: Bruno Menslin
 }
 
 #page-find-spots .spot h3 {
-    margin: 10px 0 20px 10px;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 34px;
-    font-family: Roboto, sans-serif;
+    margin: 10px 0 20px 0;
 }
 
 #page-find-spots .spot p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 26px;
-    margin: 0 0 50px 10px;
+    margin-bottom: 50px;
+    color: rgb(194, 194, 194);
 }

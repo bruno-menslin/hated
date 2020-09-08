@@ -43,6 +43,12 @@ main {
     margin: 40px 0;
 }
 
+form select {
+    -webkit-appearance: none; /*remove default appearance (chrome)*/
+    -moz-appearance: none; /*remove default appearance (firefox)*/
+    appearance: none; /*remove default appearance*/
+}
+
 footer {
     margin-top: 100px;
     text-align: center;
