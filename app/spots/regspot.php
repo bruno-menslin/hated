@@ -84,38 +84,56 @@
             <legend>
                 <h2>Spot photo</h2>
             </legend>
-            <label for="idimage">Image (URL)</label>
-            <input type="text" name="image" id="idimage">
+            <div class="field">
+                <label for="idimage">Image URL</label>
+                <input type="text" name="image" id="idimage">
+            </div>
         </fieldset>
         <fieldset>
             <legend>
                 <h2>Spot features</h2>
             </legend>
-            <?php
-                foreach ($features as $feature) {
-            ?>
-                    <input type="checkbox" name="features[]" id="id<?php echo $feature['name']; ?>" value="<?php echo $feature['id']; ?>">
-                    <label for="id<?php echo $feature['name']; ?>"><?php echo $feature['name']; ?></label>
-            <?php
-                }
-            ?>
+            <div class="features-grid">
+                <?php
+                    foreach ($features as $feature) {
+                ?>
+                        <div class="feature-grid">
+                            <input type="checkbox" name="features[]" id="id<?php echo $feature['name']; ?>" value="<?php echo $feature['id']; ?>" class="feature-checkbox">
+                            <label for="id<?php echo $feature['name']; ?>" class="feature-label"><?php echo $feature['name']; ?></label>
+                        </div>
+                <?php
+                    }
+                ?>
+            </div>
         </fieldset>
         <fieldset>
             <legend>
                 <h2>Spot location</h2>
             </legend>
-            <label for="idcountry">Country</label>
-            <input type="text" name="country" id="idcountry">
-            <label for="idstate">State</label>
-            <input type="text" name="state" id="idstate">
-            <label for="idcity">City</label>
-            <input type="text" name="city" id="idcity">
-            <label for="idneighborhood">Neighborhood</label>
-            <input type="text" name="neighborhood" id="idneighborhood">
-            <label for="idstreet">Street</label>
-            <input type="text" name="street" id="idstreet">
-            <label for="idnumber">Number</label>
-            <input type="number" name="number" id="idnumber" max="99999">
+            <div class="field">
+                <label for="idcountry">Country</label>
+                <input type="text" name="country" id="idcountry">
+            </div>
+            <div class="field">
+                <label for="idstate">State</label>
+                <input type="text" name="state" id="idstate">
+            </div>
+            <div class="field">
+                <label for="idcity">City</label>
+                <input type="text" name="city" id="idcity">
+            </div>
+            <div class="field">
+                <label for="idneighborhood">Neighborhood</label>
+                <input type="text" name="neighborhood" id="idneighborhood">
+            </div>
+            <div class="field">
+                <label for="idstreet">Street</label>
+                <input type="text" name="street" id="idstreet">
+            </div>
+            <div class="field">
+                <label for="idnumber">Number</label>
+                <input type="number" name="number" id="idnumber" max="99999">
+            </div>            
         </fieldset>
         <button type="submit" name="submit">Register spot</button>
     </form>

@@ -1,0 +1,113 @@
+/*
+Date: 07/09/2020
+Desc: Register spots style file
+Author: Bruno Menslin
+*/
+
+#page-register-spot {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#page-register-spot form {
+    max-width: 730px; /*border-box*/
+    margin: 0 auto; /*auto to horizontal align*/
+    padding: 0 64px;
+}
+
+#page-register-spot form h1 {
+    font-size: 36px;
+}
+
+#page-register-spot form fieldset {
+    margin-top: 64px;
+    border: none;
+}
+
+#page-register-spot form legend {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#page-register-spot form .field {
+    margin-bottom: 24px;
+    display: flex;
+    flex: 1; /*fill all available space*/
+    flex-direction: column;
+}
+
+#page-register-spot fieldset .field:last-child {
+    margin-bottom: 0;
+}
+
+#page-register-spot form input {
+    font-size: 20px;
+    text-transform: capitalize;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.09);
+    border: none;
+    border-radius: 8px;
+
+    padding: 16px 24px;
+    outline: none; /*remove outline from input (line that is displayed on click)*/
+    transition: background-color 400ms;
+}
+
+#page-register-spot form input:hover {
+    background: rgba(255, 255, 255, 0.123);
+}
+
+#page-register-spot form input:focus {
+    background: rgba(255, 255, 255, 0.09);
+}
+
+#page-register-spot form label {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+#page-register-spot .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    line-height: 32px;
+}
+
+#page-register-spot .feature-grid input {
+    display: none;
+}
+
+#page-register-spot .feature-grid label {
+    color: rgb(54, 53, 53);
+    font-size: 25px;
+    cursor: pointer;
+    transition: color 400ms;
+}
+
+#page-register-spot .feature-grid label:hover {
+    color: rgba(255, 255, 255, 0.418);
+}
+
+.feature-checkbox:checked + .feature-label {
+    color: #fff !important;
+}
+
+#page-register-spot form button {
+    width: 260px;
+    height: 56px;
+    margin-top: 40px;
+
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 20px;
+
+    border: none;
+    border-radius: 8px;
+    transition: background-color 400ms;
+    background: #0F0140;
+}
+
+#page-register-spot form button:hover {
+    background: #120052;
+}

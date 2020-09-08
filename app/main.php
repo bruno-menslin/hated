@@ -9,6 +9,7 @@
         <title>HATED</title>
         <link rel="stylesheet" href="../assets/css/main.css">
         <link rel="stylesheet" href="../assets/css/find-spots.css">
+        <link rel="stylesheet" href="../assets/css/register-spots.css">
     </head>
     <body>
         <div class="content">
