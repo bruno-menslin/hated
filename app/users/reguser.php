@@ -77,7 +77,4 @@
             <button type="submit" name="submit">Register</button>
         </div>
     </form>
-    <footer>
-        <p>&copy; All rights reserved</p>
-    </footer>
 </div>

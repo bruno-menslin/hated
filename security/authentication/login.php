@@ -72,9 +72,6 @@
                     </form>
                 </div>          
             </main>
-            <footer>
-                <p>&copy; All rights reserved</p>
-            </footer>
         </div>        
     </body>
 </html>
