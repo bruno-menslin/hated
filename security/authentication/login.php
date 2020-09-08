@@ -26,12 +26,13 @@
                 $_SESSION['userid'] = $id['id'];
                 $_SESSION['sessionid'] = session_id();
 
-                header("Location: ../../index.php");
+                $link = ($_GET['redirect'] == '') ? "users/account.php" : $_GET['redirect'];
+                header("Location: ../../app/main.php?page=" . $link);
             } else {
                 $msg = "Incorrect email or password.";
             }
-        } 
-        echo $msg;
+        }
+        echo "<script type='text/javascript'>alert('$msg');</script>";
     }
 ?>
 

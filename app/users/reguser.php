@@ -41,7 +41,6 @@
 
                     if ($result) {
                         $msg = "User successfully registered.";
-                        // header("Location: ../security/authentication/login.php");
                     } else {
                         $msg = "Failed to register user.";
                     }
@@ -52,7 +51,14 @@
                 $msg = "Username already registered.";
             }
         }
-        echo $msg;
+        echo "
+            <script type='text/javascript'>
+                alert('$msg');
+                if ('$msg' == 'User successfully registered.') {
+                    window.location = '../security/authentication/login.php';
+                }
+            </script>
+        ";
     }
 ?>
 
@@ -75,6 +81,7 @@
         </fieldset>        
         <div class="form-buttons">
             <button type="submit" name="submit">Register</button>
+            <a href="../security/authentication/login.php">Login</a>
         </div>
     </form>
 </div>

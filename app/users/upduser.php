@@ -49,7 +49,6 @@
 
                     if ($result) {
                         $msg = "User successfully updated.";
-                        // header("Location: main.php?page=users/account.php");
                     } else {
                         $msg = "Failed to update user.";
                     }
@@ -60,7 +59,14 @@
                 $msg = "Username already registered.";
             }
         }
-        echo $msg;
+        echo "
+            <script type='text/javascript'>
+                alert('$msg');
+                if ('$msg' == 'User successfully updated.') {
+                    window.location = '?page=users/account.php';
+                }
+            </script>
+        ";
     }
 ?>
 

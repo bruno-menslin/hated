@@ -14,6 +14,10 @@
     } else {
         $msg = "Failed to delete spot.";
     }
-    echo $msg;
-    // header("Location: main.php?page=spots/managespots.php");
+    echo "
+        <script type='text/javascript'>
+            alert('$msg');
+            window.location = '?page=spots/managespots.php';
+        </script>
+    ";
 ?>

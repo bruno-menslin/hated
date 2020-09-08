@@ -1,5 +1,6 @@
 <?php
-    include "/opt/lampp/htdocs/hated/security/authentication/validation.php";
+    $redirect = "spots/regspot.php";
+    include "../security/authentication/validation.php";
 
     $sql = "SELECT * FROM features";
     $stm_sql = $db_connection -> prepare($sql);
@@ -68,12 +69,18 @@
 
             if ($result) {
                 $msg = "Spot successfully registered.";
-                // header("Location: main.php?page=spots/findspots.php");
             } else {
                 $msg = "Failed to register spot.";
             }
         }
-        echo $msg;
+        echo "
+            <script type='text/javascript'>
+                alert('$msg');
+                if ('$msg' == 'Spot successfully registered.') {
+                    window.location = '?page=spots/findspots.php';
+                }
+            </script>
+        ";
     }
 ?>
 

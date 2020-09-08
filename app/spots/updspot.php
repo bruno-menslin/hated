@@ -87,12 +87,18 @@
 
             if ($result) {
                 $msg = "Spot successfully updated.";
-                // header("Location: main.php?page=spots/managespots.php");
             } else {
                 $msg = "Failed to update spot.";
             }
         }
-        echo $msg;
+        echo "
+            <script type='text/javascript'>
+                alert('$msg');
+                if ('$msg' == 'Spot successfully updated.') {
+                    window.location = '?page=spots/managespots.php';
+                }
+            </script>
+        ";
     }
 ?>
 
