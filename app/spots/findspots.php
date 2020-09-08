@@ -67,7 +67,7 @@
                     }
         ?>
                     <div class="spot">
-                        <img src="<?php echo $spot['image']; ?>" alt="spot image" width="300px" height="300px">
+                        <img src="<?php echo $spot['image']; ?>" alt="Spot image">
                         <h3><?php echo $features; ?></h3>
                         <p>
                             <?php echo $spot['country'] . ", " . $spot['state']; ?> <br>
