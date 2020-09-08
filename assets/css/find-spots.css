@@ -72,36 +72,68 @@ Author: Bruno Menslin
     display: block;
 }
 
-#page-find-spots .spots {
+.page .spots {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
 }
 
-#page-find-spots .spots h2 {
+.page .spots h2 {
     text-align: center;
 }
 
-#page-find-spots .spot {
+.page .spot {
     border-radius: 8px;
 }
 
-#page-find-spots .spot img {
+.page .spot img {
     width: 100%;
     height: 231px;
     border-radius: 8px 8px 0 0;
     object-fit: cover;
 }
 
-#page-find-spots .spot h3 {
+.page .spot h3 {
     font-size: 22px;
     line-height: 34px;
     margin: 10px 0 20px 0;
 }
 
-#page-find-spots .spot p {
+.page .spot p {
     font-size: 18px;
     line-height: 26px;
     margin-bottom: 50px;
     color: rgb(194, 194, 194);
+}
+
+.spot .spots-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.spot .spots-buttons a {
+    width: 50%;
+    padding: 8px;
+    border-radius: 0 0 0 6px;
+
+    color: #fff;
+    font-size: 19px;
+    text-align: center;
+    background: #726094cb;
+    transition: background-color 400ms;
+}
+
+.spot .spots-buttons a:last-child {
+    background: #3f296bcb;
+    border-radius: 0 0 6px 0;
+}
+
+.spot .spots-buttons a:hover {
+    background: #8772afcb;
+}
+
+.spot .spots-buttons a:last-child:hover {
+    background: #52358bcb;
 }
