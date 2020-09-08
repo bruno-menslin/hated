@@ -44,34 +44,30 @@
         <link rel="stylesheet" href="../../assets/css/main.css">
     </head>
     <body>
-        <div class="content">
-            <header>
-                <div>
-                    <a href="../../index.php" class="logo">Hated</a>
-                    <a href="../../app/main.php?page=users/account.php">Account</a>
-                </div>
-            </header>
-            <main>
-                <div id="page-login" class="page">
-                    <form action="#" name="login" method="POST">
-                        <h1>Login</h1>
-                        <fieldset>
-                            <div class="field">
-                                <label for="idemail">E-mail</label>
-                                <input type="text" name="email" id="idemail">
-                            </div>
-                            <div class="field">
-                                <label for="idpassword">Password</label>
-                                <input type="password" name="password" id="idpassword">
-                            </div>                              
-                        </fieldset>
-                        <div class="form-buttons">
-                            <button type="submit" name="submit">Login</button>
-                            <a href="../../app/main.php?page=users/reguser.php">Register</a>
-                        </div> 
-                    </form>
-                </div>          
-            </main>
-        </div>        
+        <header>
+            <a href="../../index.php" class="logo">Hated</a>
+            <a href="../../app/main.php?page=users/account.php">Account</a>
+        </header>
+        <main>
+            <div id="page-login" class="page">
+                <form action="#" name="login" method="POST">
+                    <h1>Login</h1>
+                    <fieldset>
+                        <div class="field">
+                            <label for="idemail">E-mail</label>
+                            <input type="text" name="email" id="idemail">
+                        </div>
+                        <div class="field">
+                            <label for="idpassword">Password</label>
+                            <input type="password" name="password" id="idpassword">
+                        </div>                              
+                    </fieldset>
+                    <div class="form-buttons">
+                        <button type="submit" name="submit">Login</button>
+                        <a href="../../app/main.php?page=users/reguser.php">Register</a>
+                    </div> 
+                </form>
+            </div>          
+        </main>   
     </body>
 </html>

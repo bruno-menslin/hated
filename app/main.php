@@ -12,18 +12,14 @@
         <link rel="stylesheet" href="../assets/css/register-spots.css">
     </head>
     <body>
-        <div class="content">
-            <header>
-                <div>
-                    <a href="../index.php" class="logo">Hated</a>
-                    <a href="main.php?page=users/account.php">Account</a>
-                </div>
-            </header>
-            <main>
-                <?php
-                    include $_GET['page'];
-                ?>
-            </main>
-        </div>
+        <header>
+            <a href="../index.php" class="logo">Hated</a>
+            <a href="main.php?page=users/account.php">Account</a>
+        </header>
+        <main>
+            <?php
+                include $_GET['page'];
+            ?>
+        </main>
     </body>
 </html>
