@@ -1,0 +1,19 @@
+/*
+Date: 07/09/2020
+Desc: Home page style file
+Author: Bruno Menslin
+*/
+
+#page-home img {
+    width: 1100px;
+    height: 650px;
+    object-fit: cover;
+}
+
+#page-home div {
+    display: flex;
+    justify-content: space-around;
+    text-align: center; 
+    margin-top: 40px;
+    font-size: 30px;
+}
