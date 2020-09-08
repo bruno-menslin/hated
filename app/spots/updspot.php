@@ -96,52 +96,72 @@
     }
 ?>
 
-<div class="page-update-spot">
+<div id="page-update-spot" class="page">
     <form action="#" name="update-spot" method="POST">
         <h1>Update spot</h1>
         <fieldset>
             <legend>
                 <h2>Spot photo</h2>
             </legend>
-            <label for="idimage">Image (URL)</label>
-            <input type="text" name="image" id="idimage" value="<?php echo $spot['image']; ?>">
+            <div class="field">
+                <label for="idimage">Image (URL)</label>
+                <input type="text" name="image" id="idimage" value="<?php echo $spot['image']; ?>">
+            </div>
         </fieldset>
         <fieldset>
             <legend>
                 <h2>Spot features</h2>
             </legend>
-            <?php
-                foreach ($features as $feature) {
-                    $checked = '';
-                    foreach ($spot_features as $spot_feature) {
-                        if ($spot_feature['features_id'] == $feature['id']) {
-                            $checked = "checked";
+            <div class="features-grid">
+                <?php
+                    foreach ($features as $feature) {
+                        $checked = '';
+                        foreach ($spot_features as $spot_feature) {
+                            if ($spot_feature['features_id'] == $feature['id']) {
+                                $checked = "checked";
+                            }
                         }
+                ?>
+                        <div class="feature-grid">
+                            <input type="checkbox" name="features[]" id="id<?php echo $feature['name']; ?>" value="<?php echo $feature['id']; ?>" <?php echo $checked; ?> class="feature-checkbox">
+                            <label for="id<?php echo $feature['name']; ?>" class="feature-label"><?php echo $feature['name']; ?></label>
+                        </div>
+                <?php
                     }
-            ?>
-                    <input type="checkbox" name="features[]" id="id<?php echo $feature['name']; ?>" value="<?php echo $feature['id']; ?>" <?php echo $checked; ?>>
-                    <label for="id<?php echo $feature['name']; ?>"><?php echo $feature['name']; ?></label>
-            <?php
-                }
-            ?>
+                ?>
+            </div>
         </fieldset>
         <fieldset>
             <legend>
                 <h2>Spot location</h2>
             </legend>
-            <label for="idcountry">Country</label>
-            <input type="text" name="country" id="idcountry" value="<?php echo $spot['country']; ?>">
-            <label for="idstate">State</label>
-            <input type="text" name="state" id="idstate" value="<?php echo $spot['state']; ?>">
-            <label for="idcity">City</label>
-            <input type="text" name="city" id="idcity" value="<?php echo $spot['city']; ?>">
-            <label for="idneighborhood">Neighborhood</label>
-            <input type="text" name="neighborhood" id="idneighborhood" value="<?php echo $spot['neighborhood']; ?>">
-            <label for="idstreet">Street</label>
-            <input type="text" name="street" id="idstreet" value="<?php echo $spot['street']; ?>">
-            <label for="idnumber">Number</label>
-            <input type="number" name="number" id="idnumber" max="99999" value="<?php echo $spot['number']; ?>">
+            <div class="field">
+                <label for="idcountry">Country</label>
+                <input type="text" name="country" id="idcountry" value="<?php echo $spot['country']; ?>">
+            </div>
+            <div class="field">
+                <label for="idstate">State</label>
+                <input type="text" name="state" id="idstate" value="<?php echo $spot['state']; ?>">
+            </div>
+            <div class="field">
+                <label for="idcity">City</label>
+                <input type="text" name="city" id="idcity" value="<?php echo $spot['city']; ?>">
+            </div>
+            <div class="field">
+                <label for="idneighborhood">Neighborhood</label>
+                <input type="text" name="neighborhood" id="idneighborhood" value="<?php echo $spot['neighborhood']; ?>">
+            </div>
+            <div class="field">
+                <label for="idstreet">Street</label>
+                <input type="text" name="street" id="idstreet" value="<?php echo $spot['street']; ?>">
+            </div>    
+            <div class="field">
+                <label for="idnumber">Number</label>
+                <input type="number" name="number" id="idnumber" max="99999" value="<?php echo $spot['number']; ?>">
+            </div>            
         </fieldset>
-        <button type="submit" name="submit">Update spot</button>
+        <div class="form-buttons">
+            <button type="submit" name="submit">Update spot</button>
+        </div>
     </form>
 </div>
