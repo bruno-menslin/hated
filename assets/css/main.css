@@ -43,10 +43,111 @@ main {
     margin: 40px 0;
 }
 
-form select {
+.page {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.page a {
+    color: rgb(207, 207, 207);
+}
+
+.page a:hover {
+    color: #fff;
+}
+
+.page form {
+    max-width: 730px; /*border-box*/
+    margin: 0 auto; /*auto to horizontal align*/
+    padding: 0 64px;
+}
+
+.page form h1 {
+    font-size: 36px;
+}
+
+.page form fieldset {
+    margin-top: 64px;
+    border: none;
+}
+
+.page form legend {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.page form .field {
+    margin-bottom: 24px;
+    display: flex;
+    flex: 1; /*fill all available space*/
+    flex-direction: column;
+}
+
+.page fieldset .field:last-child {
+    margin-bottom: 0;
+}
+
+.page form input {
+    font-size: 20px;
+    text-transform: none; /*aaaaaaaa*/
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.09);
+    border: none;
+    border-radius: 8px;
+
+    padding: 16px 24px;
+    outline: none; /*remove outline from input (line that is displayed on click)*/
+    transition: background-color 400ms;
+}
+
+.page form input:hover {
+    background: rgba(255, 255, 255, 0.123);
+}
+
+.page form input:focus {
+    background: rgba(255, 255, 255, 0.09);
+}
+
+.page form select {
     -webkit-appearance: none; /*remove default appearance (chrome)*/
     -moz-appearance: none; /*remove default appearance (firefox)*/
     appearance: none; /*remove default appearance*/
+}
+
+.page form label {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.page .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 64px;
+}
+
+.page .form-buttons a {
+    font-size: 20px;
+}
+
+.page .form-buttons button {
+    width: 260px;
+    height: 56px;
+    cursor: pointer;
+
+    color: #fff;
+    font-size: 20px;
+
+    border: none;
+    border-radius: 8px;
+    transition: background-color 400ms;
+    background: #726094cb;
+}
+
+.page form button:hover {
+    background: #726094;
 }
 
 footer {

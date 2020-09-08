@@ -77,7 +77,7 @@
     }
 ?>
 
-<div id="page-register-spot">
+<div id="page-register-spot" class="page">
     <form action="#" name="register-spot" method="POST">
         <h1>Register spot</h1>
         <fieldset>
@@ -135,6 +135,8 @@
                 <input type="number" name="number" id="idnumber" max="99999">
             </div>            
         </fieldset>
-        <button type="submit" name="submit">Register spot</button>
+        <div class="form-buttons">
+            <button type="submit" name="submit">Register spot</button>
+        </div>
     </form>
 </div>

@@ -4,48 +4,39 @@ Desc: Find spots style file
 Author: Bruno Menslin
 */
 
-#page-find-spots {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
 #page-find-spots form {
-    margin-bottom: 40px;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
+
+    max-width: 1100px; /*.page form*/
+    margin: 0 0 40px 0;
+    padding: 0;
 }
 
-#page-find-spots form select,
 #page-find-spots form input {
-    font-size: 20px;
-    text-align: center;
-
-    background: rgba(255, 255, 255, 0.09);
-    border: none;
-
-    padding: 16px 24px;
-    outline: none;
-    transition: background-color 400ms;
+    border-radius: 0;
+    text-transform: uppercase;
 }
 
 #page-find-spots form select {
     border-radius: 6px 0 0 6px;
     padding-left: 20px;
+    font-size: 20px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.09);
+    border: none;
+    outline: none;
+    transition: background-color 400ms;
 }
 
 #page-find-spots form select option {
     background: #1f1f1f;
 }
 
-#page-find-spots form select:hover,
-#page-find-spots form input:hover {
+#page-find-spots form select:hover {
     background: rgba(255, 255, 255, 0.123);
-}
-
-#page-find-spots form input:focus {
-    background: rgba(255, 255, 255, 0.09);
 }
 
 #page-find-spots form button {

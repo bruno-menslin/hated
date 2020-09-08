@@ -30,7 +30,7 @@
     }    
 ?>
 
-<div id="page-find-spots">
+<div id="page-find-spots" class="page">
     <form action="#" name="search-spot" method="POST">
         <select name="column" id="idcolumn">
             <option value="">Type</option>

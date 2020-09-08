@@ -41,6 +41,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>HATED</title>
+        <link rel="stylesheet" href="../../assets/css/main.css">
     </head>
     <body>
         <div class="content">
@@ -51,16 +52,24 @@
                 </div>
             </header>
             <main>
-                <div class="">
+                <div id="page-login" class="page">
                     <form action="#" name="login" method="POST">
                         <h1>Login</h1>
-                        <label for="idemail">E-mail</label>
-                        <input type="text" name="email" id="idemail">
-                        <label for="idpassword">Password</label>
-                        <input type="password" name="password" id="idpassword">
-                        <button type="submit" name="submit">Log in</button>
+                        <fieldset>
+                            <div class="field">
+                                <label for="idemail">E-mail</label>
+                                <input type="text" name="email" id="idemail">
+                            </div>
+                            <div class="field">
+                                <label for="idpassword">Password</label>
+                                <input type="password" name="password" id="idpassword">
+                            </div>                              
+                        </fieldset>
+                        <div class="form-buttons">
+                            <button type="submit" name="submit">Login</button>
+                            <a href="../../app/main.php?page=users/reguser.php">Register</a>
+                        </div> 
                     </form>
-                    <a href="../../app/main.php?page=users/reguser.php">Register</a>
                 </div>          
             </main>
             <footer>
