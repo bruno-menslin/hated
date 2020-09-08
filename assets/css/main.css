@@ -150,6 +150,13 @@ main {
     background: #726094;
 }
 
+#page-account {
+    display: grid;
+    grid-gap: 50px;
+    text-align: center;
+    font-size: 25px;
+}
+
 footer {
     margin-top: 100px;
     text-align: center;
