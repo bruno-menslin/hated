@@ -105,9 +105,9 @@ Author: Bruno Menslin
     border: none;
     border-radius: 8px;
     transition: background-color 400ms;
-    background: #0F0140;
+    background: #726094cb;
 }
 
 #page-register-spot form button:hover {
-    background: #120052;
+    background: #726094;
 }
