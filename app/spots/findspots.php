@@ -72,7 +72,13 @@
                         <p>
                             <?php echo $spot['country'] . ", " . $spot['state']; ?> <br>
                             <?php echo $spot['city'] . ", " . $spot['neighborhood']; ?> <br>
-                            <?php echo $spot['street'] . ", " . $spot['number']; ?>
+                            <?php
+                                if ($spot['number'] == '') {
+                                    echo $spot['street'];
+                                } else {
+                                    echo $spot['street'] . ", " . $spot['number'];
+                                }
+                            ?>
                         </p>
                     </div>
         <?php
