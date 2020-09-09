@@ -67,7 +67,7 @@
                     <fieldset>
                         <div class="field">
                             <label for="idemail">E-mail</label>
-                            <input type="text" name="email" id="idemail">
+                            <input type="email" name="email" id="idemail">
                         </div>
                         <div class="field">
                             <label for="idpassword">Password</label>
