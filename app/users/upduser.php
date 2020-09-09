@@ -71,8 +71,14 @@
 ?>
 
 <div id="page-update-user" class="page">
+    <nav>
+        <a href="?page=users/account.php">
+            <img src="../assets/images/back.svg" alt="back">
+        </a>
+        <h3>Update account</h3>
+    </nav>
     <form action="#" name="update-user" method="POST">
-        <h1>Update registration</h1>
+        <h1>Update your account</h1>
         <fieldset>
             <div class="field">
                 <label for="idusername">Username</label>

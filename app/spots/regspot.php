@@ -85,6 +85,12 @@
 ?>
 
 <div id="page-register-spot" class="page">
+    <nav>
+        <a href="../index.php">
+            <img src="../assets/images/back.svg" alt="back">
+        </a>
+        <h3>Register spot</h3>
+    </nav>
     <form action="#" name="register-spot" method="POST">
         <h1>Register spot</h1>
         <fieldset>
@@ -143,7 +149,7 @@
             </div>            
         </fieldset>
         <div class="form-buttons">
-            <button type="submit" name="submit">Register spot</button>
+            <button type="submit" name="submit">Register</button>
         </div>
     </form>
 </div>

@@ -31,6 +31,12 @@
 ?>
 
 <div id="page-find-spots" class="page">
+    <nav>
+        <a href="../index.php">
+            <img src="../assets/images/back.svg" alt="back">
+        </a>
+        <h3>Find spots</h3>
+    </nav>
     <form action="#" name="search-spot" method="POST">
         <select name="column" id="idcolumn">
             <option value="">Type</option>

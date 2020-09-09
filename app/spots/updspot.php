@@ -103,6 +103,12 @@
 ?>
 
 <div id="page-update-spot" class="page">
+    <nav>
+        <a href="?page=users/account.php">
+            <img src="../assets/images/back.svg" alt="back">
+        </a>
+        <h3>Update spot</h3>
+    </nav>
     <form action="#" name="update-spot" method="POST">
         <h1>Update spot</h1>
         <fieldset>
@@ -167,7 +173,7 @@
             </div>            
         </fieldset>
         <div class="form-buttons">
-            <button type="submit" name="submit">Update spot</button>
+            <button type="submit" name="submit">Update</button>
         </div>
     </form>
 </div>

@@ -63,8 +63,14 @@
 ?>
 
 <div id="page-register-user" class="page">
+    <nav>
+        <a href="../security/authentication/login.php">
+            <img src="../assets/images/back.svg" alt="back">
+        </a>
+        <h3>Create account</h3>
+    </nav>
     <form action="#" name="register-user" method="POST">
-        <h1>User registration</h1>
+        <h1>Create your account</h1>
         <fieldset>
             <div class="field">
                 <label for="idusername">Username</label>
@@ -80,7 +86,7 @@
             </div>
         </fieldset>        
         <div class="form-buttons">
-            <button type="submit" name="submit">Register</button>
+            <button type="submit" name="submit">Create</button>
             <a href="../security/authentication/login.php">Login</a>
         </div>
     </form>

@@ -9,6 +9,12 @@
 ?>
 
 <div id="page-manage-spots" class="page">
+    <nav>
+        <a href="?page=users/account.php">
+            <img src="../assets/images/back.svg" alt="back">
+        </a>
+        <h3>Manage spots</h3>
+    </nav>
     <div class="spots">
         <?php
             if (!empty($spots)) {

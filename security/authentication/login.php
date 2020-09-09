@@ -51,6 +51,12 @@
         </header>
         <main>
             <div id="page-login" class="page">
+                <nav>
+                    <a href="../../index.php">
+                        <img src="../../assets/images/back.svg" alt="back">
+                    </a>
+                    <h3>Login</h3>
+                </nav>
                 <form action="#" name="login" method="POST">
                     <h1>Login</h1>
                     <fieldset>
@@ -65,7 +71,7 @@
                     </fieldset>
                     <div class="form-buttons">
                         <button type="submit" name="submit">Login</button>
-                        <a href="../../app/main.php?page=users/reguser.php">Register</a>
+                        <a href="../../app/main.php?page=users/reguser.php">Sign up</a>
                     </div> 
                 </form>
             </div>          
