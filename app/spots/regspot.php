@@ -7,7 +7,7 @@
     $stm_sql -> execute();
     $features = $stm_sql -> fetchAll(PDO::FETCH_ASSOC);
 
-    if (isset($_POST['submit'])) { // to run on submit
+    if (isset($_POST['submit'])) { //to run on submit
 
         $image = $_POST['image'];
         $spot_features = (empty($_POST['features'])) ? NULL : $_POST['features'];
@@ -32,12 +32,11 @@
             $msg = "Fill the neighborhood field.";
         } else if ($street == '') {
             $msg = "Fill the street field.";
-        } else {
-            $sql = "INSERT INTO spots VALUES (:code, :image, :country, :state, :city, :neighborhood, :street, :number, :user_id)";
+        } else { //register spot
 
+            $sql = "INSERT INTO spots VALUES (:code, :image, :country, :state, :city, :neighborhood, :street, :number, :user_id)";
             $stm_sql = $db_connection -> prepare($sql);
 
-            // session_start();
             $code = NULL;
             $user_id = $_SESSION['userid'];
 
@@ -53,17 +52,27 @@
             
             $result = $stm_sql -> execute();
 
-            if ($result) {
+            if ($result) { //register spot features
                 $spot_code = $db_connection -> lastInsertId();
 
                 foreach ($spot_features as $feature_id) {
-                    $sql = "INSERT INTO spots_has_features VALUES (:spot_code, :feature_id)";
 
+                    $sql = "INSERT INTO spots_has_features VALUES (:spot_code, :feature_id)";
                     $stm_sql = $db_connection -> prepare($sql);
                     $stm_sql -> bindParam(':spot_code', $spot_code);
                     $stm_sql -> bindParam(':feature_id', $feature_id);
-
                     $result = $stm_sql -> execute();
+
+                    if (!$result) { //delete spot and its features
+
+                        $sql = "DELETE FROM spots_has_features WHERE spots_code = :spot_code; DELETE FROM spots WHERE code = :spot_code";
+                        $stm_sql = $db_connection -> prepare($sql);
+                        $stm_sql -> bindParam(':spot_code', $spot_code);
+                        $stm_sql -> bindParam(':feature_id', $feature_id);
+                        $stm_sql -> execute();
+                        
+                        break;
+                    }
                 }
             }
 
