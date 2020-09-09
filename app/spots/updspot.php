@@ -1,7 +1,7 @@
 <?php
-    include "/opt/lampp/htdocs/hated/security/authentication/validation.php";
-
     $spot_code = $_GET['code'];
+
+    include "/opt/lampp/htdocs/hated/security/authentication/validation.php";
 
     $sql = "SELECT * FROM features";
     $stm_sql = $db_connection -> prepare($sql);

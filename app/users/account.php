@@ -1,6 +1,5 @@
 <?php
-    $redirect = "users/account.php";
-    include "../security/authentication/validation.php";
+    include "/opt/lampp/htdocs/hated/security/authentication/validation.php";
 ?>
 <div id="page-account" class="page">
     <nav>

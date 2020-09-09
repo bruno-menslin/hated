@@ -10,7 +10,7 @@
         } else if ($password == '') {
             $msg = "Fill the password field.";
         } else {
-            $sql = "SELECT id FROM users WHERE email = :email AND password = :password";
+            $sql = "SELECT id, permission FROM users WHERE email = :email AND password = :password";
             $stm_sql = $db_connection -> prepare($sql);
 
             $password = md5($password);
@@ -20,14 +20,19 @@
             $stm_sql -> execute();
 
             if ($stm_sql -> rowCount() == 1) {
-                $id = $stm_sql -> fetch(PDO::FETCH_ASSOC);
+                $user = $stm_sql -> fetch(PDO::FETCH_ASSOC);
                 
                 session_start();
-                $_SESSION['userid'] = $id['id'];
+                $_SESSION['userid'] = $user['id'];
+                $_SESSION['userpermission'] = $user['permission'];
                 $_SESSION['sessionid'] = session_id();
 
-                $link = ($_GET['redirect'] == '') ? "users/account.php" : $_GET['redirect'];
-                header("Location: ../../app/main.php?page=" . $link);
+                if ($_GET['redirect'] == "") {
+                    $link = "../../app/main.php?page=users/account.php";
+                } else {
+                    $link = "../../app/main.php?page=" . $_GET['redirect'];
+                }
+                header("Location: " . $link);
             } else {
                 $msg = "Incorrect email or password.";
             }

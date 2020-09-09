@@ -1,7 +1,7 @@
 <?php
-    include "/opt/lampp/htdocs/hated/security/authentication/validation.php";
-    
     $spot_code = $_GET['code'];
+
+    include "/opt/lampp/htdocs/hated/security/authentication/validation.php";
 
     $sql = "DELETE FROM spots_has_features WHERE spots_code = :spot_code; DELETE FROM spots WHERE code = :spot_code AND users_id = :user_id";
     $stm_sql = $db_connection -> prepare($sql);
