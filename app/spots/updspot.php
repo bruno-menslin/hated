@@ -1,6 +1,5 @@
 <?php
     $spot_code = $_GET['code'];
-
     include "/opt/lampp/htdocs/hated/security/authentication/validation.php";
 
     $sql = "SELECT * FROM features";
@@ -45,13 +44,11 @@
             $msg = "Fill the neighborhood field.";
         } else if ($street == '') {
             $msg = "Fill the street field.";
-        } else {
-            // update table 'spots'
-            $sql = "UPDATE spots SET image = :image, country = :country, state = :state, city = :city, neighborhood = :neighborhood, street = :street, number = :number WHERE code = :spot_code AND users_id = :user_id";
+        } else { //update spot
 
+            $sql = "UPDATE spots SET image = :image, country = :country, state = :state, city = :city, neighborhood = :neighborhood, street = :street, number = :number WHERE code = :spot_code";
             $stm_sql = $db_connection -> prepare($sql);
 
-            // session_start();
             $user_id = $_SESSION['userid'];
 
             $stm_sql -> bindParam(':image', $image);
@@ -62,25 +59,22 @@
             $stm_sql -> bindParam(':street', $street);
             $stm_sql -> bindParam(':number', $number);
             $stm_sql -> bindParam(':spot_code', $spot_code);
-            $stm_sql -> bindParam(':user_id', $user_id);
             
             $result = $stm_sql -> execute();
 
-            if ($result) {
-                // delete all features from spot
+            if ($result) { //delete all features from spot
+                
                 $sql = "DELETE FROM spots_has_features WHERE spots_code = :spot_code";
                 $stm_sql = $db_connection -> prepare($sql);
                 $stm_sql -> bindParam(':spot_code', $spot_code);
-                $result = $stm_sql -> execute();
+                $stm_sql -> execute();
 
-                // insert new features of the spot
-                foreach ($upd_spot_features as $feature_id) {
+                foreach ($upd_spot_features as $feature_id) { //register new spot features
+
                     $sql = "INSERT INTO spots_has_features VALUES (:spot_code, :feature_id)";
-    
                     $stm_sql = $db_connection -> prepare($sql);
                     $stm_sql -> bindParam(':spot_code', $spot_code);
                     $stm_sql -> bindParam(':feature_id', $feature_id);
-    
                     $result = $stm_sql -> execute();
                 }
             }
