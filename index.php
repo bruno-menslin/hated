@@ -14,7 +14,7 @@
         </header>
         <main>
             <div id="page-home" class="page">
-                <img src="assets/images/home-background" alt="spot-image">
+                <img src="assets/images/home-background.jpeg" alt="spot-image">
                 <div>
                     <a href="app/main.php?page=spots/findspots.php">Find spots</a>
                     <a href="app/main.php?page=spots/regspot.php">Register spot</a>
