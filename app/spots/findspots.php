@@ -13,16 +13,19 @@
             $stm_sql = $db_connection -> prepare($sql);
             $stm_sql -> execute();
             $spots = $stm_sql -> fetchAll(PDO::FETCH_ASSOC);
+
         } else {
             if ($column == "") {
                 $sql = "SELECT * FROM spots WHERE country = :search OR state = :search OR city = :search OR neighborhood = :search OR street = :search";
                 $stm_sql = $db_connection -> prepare($sql);
                 $stm_sql -> bindParam(':search', $search);
+
             } else {
                 $sql = "SELECT * FROM spots WHERE $column = :search";
                 $stm_sql = $db_connection -> prepare($sql);
                 // $stm_sql -> bindParam(':column', $column);
                 $stm_sql -> bindParam(':search', $search);
+
             }
             $stm_sql -> execute();
             $spots = $stm_sql -> fetchAll(PDO::FETCH_ASSOC);            
