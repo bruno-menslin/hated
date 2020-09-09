@@ -1,0 +1,9 @@
+#page-account {
+    display: grid;
+    grid-gap: 50px;
+    text-align: center;
+}
+
+#page-account a {
+    font-size: 25px;
+}

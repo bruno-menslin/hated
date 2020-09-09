@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="../assets/css/main.css">
         <link rel="stylesheet" href="../assets/css/find-spots.css">
         <link rel="stylesheet" href="../assets/css/register-spots.css">
+        <link rel="stylesheet" href="../assets/css/account.css">
     </head>
     <body>
         <header>
