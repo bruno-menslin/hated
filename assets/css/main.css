@@ -35,12 +35,28 @@ header {
     margin: 0 50px;
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+nav a,
+nav h3 {
+    opacity: 40%;
+    transition: opacity 400ms;
+}
+
+nav a:hover {
+    opacity: 100%;
+}
+
 a.logo {
     font-size: 40px;
 }
 
 main {
-    margin: 40px 0;
+    margin-bottom: 50px;
 }
 
 .page {
@@ -148,13 +164,6 @@ main {
 
 .page form button:hover {
     background: #726094;
-}
-
-#page-account {
-    display: grid;
-    grid-gap: 50px;
-    text-align: center;
-    font-size: 25px;
 }
 
 input::-webkit-outer-spin-button, /*remove style from input type number (chrome)*/
