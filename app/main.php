@@ -27,7 +27,15 @@
         <?php
             if (isset($_GET['message']) && $_GET['message'] != "") {
                 $msg = $_GET['message'];
-                echo "<script type='text/javascript'> alert('$msg') </script>";
+                $query = $_GET;
+                $query['message'] = "";
+                $query_result = http_build_query($query);
+        ?>
+            <script type="text/javascript">
+                alert('<?php echo $msg; ?>');
+                window.location = "<?php echo $_SERVER['PHP_SELF']; ?>?<?php echo $query_result; ?>";
+            </script>
+        <?php
             }
         ?>
         <script src="../assets/js/main.js"></script>
