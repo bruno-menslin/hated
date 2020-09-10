@@ -19,7 +19,9 @@
         </header>
         <main>
             <?php
-                include $_GET['page'];
+                if (@!include $_GET['page']) {
+                    include "404.php";
+                }
             ?>
         </main>
         <?php
