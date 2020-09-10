@@ -1,9 +1,14 @@
 <?php
     include "/opt/lampp/htdocs/hated/security/authentication/validation.php";
 
-    $sql = "SELECT * FROM spots WHERE users_id = :user_id";
-    $stm_sql = $db_connection -> prepare($sql);
-    $stm_sql -> bindParam(':user_id', $_SESSION['userid']);
+    if ($_SESSION['userpermission'] == 0) {
+        $sql = "SELECT * FROM spots";
+        $stm_sql = $db_connection -> prepare($sql);
+    } else {
+        $sql = "SELECT * FROM spots WHERE users_id = :user_id";
+        $stm_sql = $db_connection -> prepare($sql);
+        $stm_sql -> bindParam(':user_id', $_SESSION['userid']);
+    }
     $stm_sql -> execute();
     $spots = $stm_sql -> fetchAll(PDO::FETCH_ASSOC);
 ?>
