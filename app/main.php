@@ -22,6 +22,12 @@
                 include $_GET['page'];
             ?>
         </main>
+        <?php
+            if (isset($_GET['message']) && $_GET['message'] != "") {
+                $msg = $_GET['message'];
+                echo "<script type='text/javascript'> alert('$msg') </script>";
+            }
+        ?>
         <script src="../assets/js/main.js"></script>
     </body>
 </html>

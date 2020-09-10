@@ -44,7 +44,7 @@
                         <img src="<?php echo $spot['image']; ?>" alt="Spot image">
                         <div class="spots-buttons">
                             <a href="main.php?page=spots/updspot.php&code=<?php echo $spot['code']; ?>">Update</a>
-                            <a href="main.php?page=spots/delspot.php&code=<?php echo $spot['code']; ?>" onclick="return confirmDelete('spot')">Delete</a>
+                            <a href="main.php?page=spots/del.php&code=<?php echo $spot['code']; ?>" onclick="return confirmDelete('spot')">Delete</a>
                         </div>
                         <h3><?php echo $features; ?></h3>
                         <p>

@@ -1,7 +1,9 @@
 <?php
     $spot_code = $_GET['code'];
-
     include "/opt/lampp/htdocs/hated/security/authentication/validation.php";
+
+    $msg = "";
+    $link = "?page=spots/managespots.php";
 
     $sql = "DELETE FROM spots_has_features WHERE spots_code = :spot_code; DELETE FROM spots WHERE code = :spot_code";
     $stm_sql = $db_connection -> prepare($sql);
@@ -14,10 +16,5 @@
     } else {
         $msg = "Failed to delete spot.";
     }
-    echo "
-        <script type='text/javascript'>
-            alert('$msg');
-            window.location = '?page=spots/managespots.php';
-        </script>
-    ";
+    header("Location: " . $link . "&message=" . $msg);
 ?>

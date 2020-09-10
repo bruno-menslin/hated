@@ -7,7 +7,7 @@
     } else { //entrou pela main
 
         if (!isset($_SESSION['sessionid']) || ($_SESSION['sessionid']) != session_id()) { //nao autenticado
-            $link = "../security/authentication/login.php?redirect=" . $redirect;
+            $link = "main.php?page=users/frmlogin.php&redirect=" . $redirect;
 
         } else { //autenticado
 
