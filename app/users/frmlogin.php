@@ -20,7 +20,7 @@
         </fieldset>
         <div class="form-buttons">
             <button type="submit">Login</button>
-            <a href="main.php?page=users/reguser.php">Sign up</a>
+            <a href="main.php?page=users/reguser.php&redirect=<?php echo $_GET['redirect']; ?>">Sign up</a>
         </div> 
     </form>
 </div>

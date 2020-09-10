@@ -1,6 +1,6 @@
 <?php
     $msg = "";
-    $link = "main.php?page=users/reguser.php";
+    $link = "main.php?page=users/reguser.php&redirect=" . $_GET['redirect'];
 
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -43,7 +43,7 @@
 
                 if ($result) {
                     $msg = "User successfully registered.";
-                    $link = "main.php?page=users/frmlogin.php";
+                    $link = "main.php?page=users/frmlogin.php&redirect=" . $_GET['redirect'];
                 } else {
                     $msg = "Failed to register user.";
                 }

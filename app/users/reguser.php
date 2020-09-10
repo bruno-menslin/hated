@@ -5,7 +5,7 @@
         </a>
         <h3>Create account</h3>
     </nav>
-    <form action="main.php?page=users/ins.php" name="register-user" method="POST">
+    <form action="main.php?page=users/ins.php&redirect=<?php echo $_GET['redirect']; ?>" name="register-user" method="POST">
         <h1>Create your account</h1>
         <fieldset>
             <div class="field">
@@ -23,7 +23,7 @@
         </fieldset>        
         <div class="form-buttons">
             <button type="submit" name="submit">Create</button>
-            <a href="main.php?page=users/frmlogin.php">Login</a>
+            <a href="main.php?page=users/frmlogin.php&redirect=<?php echo $_GET['redirect']; ?>">Login</a>
         </div>
     </form>
 </div>
