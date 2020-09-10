@@ -1,6 +1,6 @@
 <div id="page-register-user" class="page">
     <nav>
-        <a href="../security/authentication/login.php">
+        <a href="main.php?page=users/frmlogin.php&redirect=<?php echo $_GET['redirect']; ?>">
             <img src="../assets/images/back.svg" alt="back">
         </a>
         <h3>Create account</h3>
