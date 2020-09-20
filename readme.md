@@ -2,6 +2,7 @@
 Application to find and share skate spots
 
 ### TO DO
+- [ ] Export database with data
 - [ ] Responsive
 - [ ] Add option to view on Google maps the location of the Spot
 - [ ] Add an appropriate MVC framework
