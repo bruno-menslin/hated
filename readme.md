@@ -35,6 +35,9 @@
   <b>Gerenciamento de spots:</b> tem como propósito exibir todos os spots que o usuário registrou, permitindo a atualização e exclusão de spots. O administrador tem acesso a todos os spots, assim como tem a permissão para atualizar e excluir qualquer spot. <i>Dados necessários:</i> imagem, caracterísitcas, país, estado, cidade, bairro, rua, número (se registrado).
 </p>
 
+## BANCO DE DADOS
+![](assets/images/hated-database.png)
+
 ## CAPTURAS DE TELA
 ***Encontrar spots***
 ![](assets/images/hated-find-spots.png)
